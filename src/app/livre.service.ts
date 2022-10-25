@@ -6,8 +6,22 @@ import { Injectable } from '@angular/core';
 })
 export class LivreService {
 
-  list: any;
+  list:any;
   constructor(private http:HttpClient) { }
+
+
+  getlist()
+  {//dans cette methode on dit globalement on retourne ma list grace à mon appel asynchrone
+   return this.http.get("http://localhost:8080/api/livre").toPromise().then(res => {
+      this.list =res;
+     return this.list;
+      // code here is executed on success
+    })
+   .catch();
+  }
+
+
+  
 
   
   getLivresByGenre(genre : string) {
