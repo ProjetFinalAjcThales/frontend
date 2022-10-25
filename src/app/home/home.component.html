@@ -1,6 +1,85 @@
+<!-- COMPONENT HEADER -->
 <app-header></app-header>
 
-<p>home works!</p>
+<!-- MAIN HOME - CAROUSEL - PROCHAINS WEBINARS -->
+<div class="container text-center mt-5">
+  <div class="row">
+    <div class="col">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../../assets/images/carousel1.jpg" class="d-block w-100"
+              alt="Bienvenue le site de notre librairie">
+          </div>
+          <div class="carousel-item">
+            <img src="../../assets/images/carousel2.jpg" class="d-block w-100" alt="Soirée évènement dédicace">
+          </div>
+          <div class="carousel-item">
+            <img src="../../assets/images/carousel3.jpg" class="d-block w-100" alt="Prix nobel de littérature 2022">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-blue">
+        <div class="card-body">
+          <h4 class="card-title text-white">Nos prochains webinars</h4>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Musso et son processus d'écriture</h5>
+          <p class="card-text">Lundi 07 Novembre 2022 à 18H00</p>
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">La vie d'Annie Ernaux</h5>
+          <p class="card-text">Mercredi 30 Novembre 2022 à 17H30</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Nos coups de coeurs du mois</h5>
+          <p class="card-text">Mardi 02 Décembre 2022 à 12H30</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Les lectures de Noël</h5>
+          <p class="card-text">Vendredi 16 Décembre 2022 à 18H30</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Les nouveautés 2023</h5>
+          <p class="card-text">Lundi 02 Janvier 2023 à 17H30</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<!-- COMPONENT FOOTER -->
 <app-footer></app-footer>

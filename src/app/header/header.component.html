@@ -1,3 +1,4 @@
+<!-- NAVBAR PRINCIPALE -->
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="http://localhost:4200">Bookstore</a>
@@ -24,3 +25,21 @@
     </div>
   </div>
 </nav>
+
+<!-- NAVBAR GENRE  -->
+<nav class="navbar navbar-expand-lg bg-blue nav-genre">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngFor="let genre of listGenre">
+          <a class="nav-link active text-white" aria-current="page" routerLink="/livres/genre"
+            [queryParams]="{ search : genre.nom}">{{genre.nom}}</a>
+          <!--  <a class="nav-link active text-white" aria-current="page"
+            (click)="getGenre(genre.nom)">{{genre.nom}}</a> -->
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- http://localhost:8080/api/livre/bygenre?search=bricolage -->
