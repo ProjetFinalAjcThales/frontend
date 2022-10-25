@@ -21,4 +21,20 @@ export class LivreService {
   }
 
 
+  
+
+  
+  getLivresByGenre(genre : string) {
+    return this.http.get("http://localhost:8080/api/livre/bygenre?search="+genre)
+    .toPromise()
+    .then(res => {
+      this.list = res;
+      console.log("**** complete *****");
+      console.log(res);
+      return this.list;
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
 }

@@ -1,0 +1,15 @@
+.bg-blue {
+    background-color: #3115A3;
+}
+
+.nav-genre li:hover {
+    background-color: white;
+    border-radius: 5px;
+
+
+}
+.nav-genre li:hover > a {
+    color: black!important;
+
+
+}
