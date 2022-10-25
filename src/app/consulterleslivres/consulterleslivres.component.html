@@ -1,0 +1,24 @@
+<p>consulterleslivres works!</p>
+
+
+<div class="container mt-5 ">
+    <!-- <h1 class="text-center mb-5">Tous nos livres du genre {{search | lowercase}}</h1> -->
+  
+    <div class="row row-cols-1 row-cols-md-3 g-4 list-livre" *ngIf="Mylist">
+      <div class="col" *ngFor="let livre of Mylist">
+        <div class="card h-100">
+          <img src="../../assets/images/{{livre.image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{livre.titre}}</h5>
+            <p class="card-text">{{livre.auteur.nom}} {{livre.auteur.prenom}}.</p>
+            <p class="card-text">{{livre.prix}}&nbsp;€</p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    <!--   <p class="text-center text-danger" *ngIf="listLivres is empty"> Nous n'avons aucun livre correspondant au genre
+      {{search | lowercase }}
+    </p> -->
+</div>
+ 
