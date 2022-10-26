@@ -8,6 +8,7 @@ import { Livre } from './livre';
 export class PanierService {
   panierSession: Array<any>;
   prixTotal : number = 0;
+  nbLivre : number;
   
   constructor() { }
 
@@ -34,7 +35,7 @@ export class PanierService {
         // sinon j'augmente la quantité de 1
         this.panierSession.forEach(element => {
           if(element.livre.id === ligneCommande.livre .id) {
-            element.quantite = element.quantite + 1;
+            element.qte = element.qte + 1;
           } 
         })
       }
@@ -63,9 +64,18 @@ export class PanierService {
       this.getPanierSession();
       this.prixTotal = 0;
       this.panierSession.forEach(element => {
-       this.prixTotal = this.prixTotal + (element.livre.prix * element.quantite);
+       this.prixTotal = this.prixTotal + (element.livre.prix * element.qte);
       })
       return this.prixTotal;
+    }
+
+    getNbLivre() {
+      this.getPanierSession();
+      this.nbLivre = 0;
+      this.panierSession.forEach(element => {
+       this.nbLivre = this.nbLivre +  element.qte;
+      })
+      return this.nbLivre;
     }
 
     // vider un panier
@@ -78,7 +88,7 @@ export class PanierService {
     // Ajouter une quantité à un livre
     addQuantity(index: number) {
       this.getPanierSession();
-      this.panierSession[index].quantite = this.panierSession[index].quantite + 1;
+      this.panierSession[index].qte = this.panierSession[index].qte + 1;
      
       sessionStorage.setItem("panier", JSON.stringify(this.panierSession));
     }
@@ -86,10 +96,10 @@ export class PanierService {
     deleteQuantity(index: number) {
       this.getPanierSession();
       
-      if(this.panierSession[index].quantite - 1 == 0) {
+      if(this.panierSession[index].qte - 1 == 0) {
         this.removeElementFromPanierSession(this.panierSession[index])
       } else {
-        this.panierSession[index].quantite = this.panierSession[index].quantite - 1;
+        this.panierSession[index].qte = this.panierSession[index].qte - 1;
       }
       sessionStorage.setItem("panier", JSON.stringify(this.panierSession));
 
