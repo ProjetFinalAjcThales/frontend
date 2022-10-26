@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LivreService } from '../livre.service';
@@ -12,26 +11,29 @@ export class LivresbygenreComponent implements OnInit {
 
   search: string;
   listLivres:Array<any>;
+
   constructor(
     private route: ActivatedRoute, 
-    private livreService: LivreService,
-    private http : HttpClient
+    private livreService: LivreService
     ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      console.log("je passe ici")
       this.search = params['search'];
       // dans le subscribe pour que la méthode soit appelé à chaque changement de paramètre de recherche
       this.getLivreByGenre();
     });
-  }
-   getLivreByGenre() {
 
+  }
+
+   getLivreByGenre() {
     this.livreService.getLivresByGenre(this.search).then(res => {
       this.listLivres = res;
-    })
-
+    });
   } 
+
+
+
+
 
 }

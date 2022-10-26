@@ -29,8 +29,6 @@ export class LivreService {
     .toPromise()
     .then(res => {
       this.list = res;
-      console.log("**** complete *****");
-      console.log(res);
       return this.list;
     })
     .catch(err => {

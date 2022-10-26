@@ -4,19 +4,12 @@
   <h1 class="text-center mb-5">Tous nos livres du genre {{search | lowercase}}</h1>
 
   <div class="row row-cols-1 row-cols-md-3 g-4 list-livre" *ngIf="listLivres">
-    <div class="col card-livre" *ngFor="let livre of listLivres">
-      <div class="card h-100">
-        <img src="../../assets/images/{{livre.image}}" class="card-img-top" alt="...">
-        <div class="card-body d-flex flex-column align-items-center ">
-          <h5 class="card-title">{{livre.titre}}</h5>
-          <p class="card-text">{{livre.auteur.prenom}}&nbsp;{{livre.auteur.nom}}</p>
-          <p class="card-text">{{livre.prix}}&nbsp;€</p>
-          <button class="btn btn-warning">Ajouter au panier</button>
-        </div>
-      </div>
+    <div class="col" *ngFor="let livre of listLivres">
+      <app-livre [livre]="livre"></app-livre>
     </div>
 
   </div>
+  <br>
   <p class="text-center text-danger" *ngIf="listLivres?.length == 0"> Nous n'avons aucun livre correspondant au genre
     {{search | lowercase }}
   </p>
