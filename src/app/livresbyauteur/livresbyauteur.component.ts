@@ -13,6 +13,7 @@ export class LivresbyauteurComponent implements OnInit {
 
   search: string;
   listLivres:Array<any>;
+  
  // livreService: any;
   constructor(private route:ActivatedRoute,
     private livreService:LivreService,

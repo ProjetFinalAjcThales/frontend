@@ -15,9 +15,11 @@ export class HeaderComponent implements OnInit {
 
   listGenre: any;
   listAuteur:any;
+  //input:string;
+  recherche: string;
   panierSession: Array<CommandeLivre>;
 
-  constructor(private genreService : GenreService,  private livreService: LivreService,
+  constructor(private genreService : GenreService,  private livreService: LivreService, private router: Router,
     private auteurService:AuteurService) { }
 
   ngOnInit(): void {
@@ -28,7 +30,17 @@ export class HeaderComponent implements OnInit {
   console.log(this.panierSession);
   }
 
- 
+
+  rechercher(){
+    if(!this.estNonVide(this.recherche)){
+      return;
+    }
+    this.router.navigateByUrl("/livres/auteur?search="+this.recherche);
+  }
+
+  estNonVide(data: string){
+    return data && data.trim().length > 0 ;
+   }
 
   getInfoPanierSession() {
     if(JSON.parse(sessionStorage.getItem("panier")) != null) {

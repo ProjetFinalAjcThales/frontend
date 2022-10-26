@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommandeLivre } from '../commande-livre';
 import { Livre } from '../livre';
 
@@ -12,7 +13,7 @@ export class LivreComponent implements OnInit {
 
   panierSession: Array<any>;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
 
@@ -66,5 +67,10 @@ export class LivreComponent implements OnInit {
      this.panierSession= new Array<any>();
     }
   }
+
+  accederAuLivre(){
+
+this.router.navigateByUrl("livres/detail-livre/"+this.livre.id);    
+   }
 
 }
