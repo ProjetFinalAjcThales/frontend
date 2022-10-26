@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 
 
 import { LivresbygenreComponent } from './livresbygenre/livresbygenre.component';
+import { LivresbyauteurComponent } from './livresbyauteur/livresbyauteur.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LivresbygenreComponent } from './livresbygenre/livresbygenre.component'
     FooterComponent,
     HomeComponent,
     ConsulterleslivresComponent,
-    LivresbygenreComponent
+    LivresbygenreComponent,
+    LivresbyauteurComponent
 
   ],
   imports: [

@@ -37,4 +37,20 @@ export class LivreService {
       console.log(err);
     })
   }
+
+
+  getLivresByAuteur(auteur : string) {
+    return this.http.get("http://localhost:8080/api/livre/byauteur?search="+auteur)
+    .toPromise()
+    .then(res => {
+      this.list = res;
+      console.log("**** complete *****");
+      console.log(res);
+      return this.list;
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
 }
