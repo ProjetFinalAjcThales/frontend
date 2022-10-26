@@ -4,11 +4,15 @@
     width: auto;
 }
 
+.card-livre {
+    padding-top: 20px;
+}
+
 .card-livre  button {
-    display: none;
+    visibility: hidden;
 }
 .card-livre:hover  button{
-    display: flex;
+    visibility: visible;
 }
 
 .card-livre button:hover {

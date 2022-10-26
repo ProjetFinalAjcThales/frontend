@@ -12,6 +12,7 @@ import { LivresbygenreComponent } from '../livresbygenre/livresbygenre.component
 })
 export class HeaderComponent implements OnInit {
 
+
   listGenre: any;
   panierSession: Array<CommandeLivre>;
 
@@ -22,7 +23,6 @@ export class HeaderComponent implements OnInit {
 
 
     this.panierSession = JSON.parse(sessionStorage.getItem("panier"));
-    console.log(this.panierSession);
   }
 
   getInfoPanierSession() {
@@ -30,6 +30,7 @@ export class HeaderComponent implements OnInit {
       this.panierSession = JSON.parse(sessionStorage.getItem("panier"));
       this.panierSession.forEach(element => {
         console.log("**** " +element.livre.titre + " quantité : " + element.quantite);
+
       });
      } else {
       console.log("le panier est vide");

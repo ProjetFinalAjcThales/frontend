@@ -20,9 +20,6 @@ export class LivreService {
    .catch();
   }
 
-
-  
-
   
   getLivresByGenre(genre : string) {
     return this.http.get("http://localhost:8080/api/livre/bygenre?search="+genre)
@@ -35,4 +32,6 @@ export class LivreService {
       console.log(err);
     })
   }
+
+
 }
