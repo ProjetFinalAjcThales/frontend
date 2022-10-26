@@ -61,8 +61,9 @@ export class PanierService {
     // récpuérer le prix total d'un panier
     getPrixTotal() {
       this.getPanierSession();
+      this.prixTotal = 0;
       this.panierSession.forEach(element => {
-       this.prixTotal = this.prixTotal + element.livre.prix * element.quantite;
+       this.prixTotal = this.prixTotal + (element.livre.prix * element.quantite);
       })
       return this.prixTotal;
     }
@@ -73,4 +74,37 @@ export class PanierService {
 
       sessionStorage.setItem("panier", JSON.stringify(this.panierSession));
     }
+
+    // Ajouter une quantité à un livre
+    addQuantity(index: number) {
+      this.getPanierSession();
+      this.panierSession[index].quantite = this.panierSession[index].quantite + 1;
+     
+      sessionStorage.setItem("panier", JSON.stringify(this.panierSession));
+    }
+
+    deleteQuantity(index: number) {
+      this.getPanierSession();
+      
+      if(this.panierSession[index].quantite - 1 == 0) {
+        this.removeElementFromPanierSession(this.panierSession[index])
+      } else {
+        this.panierSession[index].quantite = this.panierSession[index].quantite - 1;
+      }
+      sessionStorage.setItem("panier", JSON.stringify(this.panierSession));
+
+    }
+    deleteElement(index:number) {
+      this.removeElementFromPanierSession(this.panierSession[index]);
+      sessionStorage.setItem("panier", JSON.stringify(this.panierSession));
+    }
+
+    removeElementFromPanierSession(element: any) {
+      console.log(element);
+      this.panierSession.forEach((value,index)=>{
+        console.log(index);
+          if(value==element) this.panierSession.splice(index,1);
+      });
+     
+  }
 }

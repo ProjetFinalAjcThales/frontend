@@ -14,6 +14,8 @@
           <th scope="col">Quantité</th>
           <th scope="col">Prix unitaire</th>
           <th scope="col">Prix total</th>
+          <th scope="col">Modifier la quantité</th>
+          <th scope="col">Supprimer</th>
         </tr>
       </thead>
       <tbody>
@@ -26,17 +28,26 @@
           <td>{{ligne.quantite}}</td>
           <td>{{ligne.livre.prix | number : '1.0'}}&nbsp;€</td>
           <td>{{ ligne.livre.prix * ligne.quantite | number : '1.0'}}&nbsp;€</td>
+          <td>
+            <button class="btn btn-success mx-2" (click)="addQuantity(index)">+</button>
+            <button class="btn btn-warning" (click)="deleteQuantity(index)">-</button>
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteLigne(index)">X</button>
+          </td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
           <th scope="col">TOTAL</th>
+          <th scope="col"> {{prixTotal | number : '1.0'}}&nbsp;€</th>
           <th scope="col"> </th>
           <th scope="col"></th>
           <th scope="col"></th>
           <th scope="col"></th>
           <th scope="col"></th>
-          <th scope="col"> {{prixTotal}}&nbsp;€</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
       </tfoot>
     </table>
@@ -53,7 +64,7 @@
     </div>
   </div>
 
-  <div *ngIf="panierSession.length <= 0 ">
+  <div *ngIf="panierSession.length == 0 ">
     <p class="text-warning text-center">Votre panier est vide ! </p>
   </div>
 
