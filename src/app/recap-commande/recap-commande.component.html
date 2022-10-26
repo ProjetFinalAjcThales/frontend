@@ -1,0 +1,89 @@
+<app-header></app-header>
+
+<div class="container mt-5 ">
+
+  <div class="row">
+    <div class="col">
+      <h2 class="text-center mb-2">Information de livraison</h2>
+      <div class="card">
+        <div class="card-body">
+          <form class="row g-3">
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Nom</label>
+              <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Prénom</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="36 chemin des lilas">
+            </div>
+
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">Ville</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+
+            <div class="col-md-6">
+              <label for="inputZip" class="form-label">Code postal</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+
+            <div class="col-12">
+              <button type="submit" class="btn btn-success mt-3" (click)="validerCommande()">Valider ma
+                commande</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <h2 class="mb-2">Récapitulatif de la commande </h2>
+      <div class="card">
+        <div class="card-body">
+
+          <p class="fw-bold" *ngIf="nbLivre > 1">{{nbLivre}}&nbsp; livres</p>
+          <p class="fw-bold" *ngIf="nbLivre == 1">{{nbLivre}}&nbsp; livres</p>
+          <table class="table table-stripped">
+
+            <tbody>
+              <tr *ngFor="let ligne of panierSession; let index = index">
+                <td><img src="../../assets/images/{{ligne.livre.image}}" class="img-list-panier-recap"
+                    alt="image de {{ligne.livre.titre}}"></td>
+                <td><span class="fw-bold">{{ligne.livre.titre}}</span><br>
+                  {{ligne.livre.auteur.prenom}} {{ligne.livre.auteur.nom}}</td>
+                <td></td>
+                <td><span class="prix fw-bold"> {{ligne.livre.prix * ligne.qte | number : '1.0'}}&nbsp;€
+                  </span><br>
+                  <span class="fw-light g" *ngIf="ligne.qte > 1">{{ligne.qte}}&nbsp; livres</span>
+                  <span class="fw-light" *ngIf="ligne.qte == 1">{{ligne.qte}}&nbsp; livre</span>
+                </td>
+
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="col">TOTAL</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"> <span class="prix fw-bold"> {{prixTotal | number : '1.0'}}&nbsp;€</span></th>
+              </tr>
+            </tfoot>
+          </table>
+          <a class="text-primary link-panier" routerLink="/monpanier">
+            Retourner à mon panier</a>
+
+          <p class="text-danger" *ngIf="message">{{message}}</p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<app-footer></app-footer>

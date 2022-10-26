@@ -1,12 +1,10 @@
-.img-list-panier {
-    max-height: 90px;
-}
-.container {
-    height: 80vh;
+.img-list-panier-recap {
+    height: 50px;
 }
 
-.btn-width {
-    width: max-content;
+.prix {
+    color: #d0740b;
+    font-size: 1rem;
 }
 
 .link-panier {

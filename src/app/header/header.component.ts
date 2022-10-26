@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
     if(JSON.parse(sessionStorage.getItem("panier")) != null) {
       this.panierSession = JSON.parse(sessionStorage.getItem("panier"));
       this.panierSession.forEach(element => {
-        console.log("**** " +element.livre.titre + " quantité : " + element.quantite);
+        console.log("**** " +element.livre.titre + " quantité : " + element.qte);
 
       });
      } else {

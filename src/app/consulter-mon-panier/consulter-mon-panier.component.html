@@ -25,9 +25,9 @@
           <td>{{ligne.livre.auteur.prenom}} {{ligne.livre.auteur.nom}}</td>
           <td><img src="../../assets/images/{{ligne.livre.image}}" class="img-list-panier"
               alt="image de {{ligne.livre.titre}}"></td>
-          <td>{{ligne.quantite}}</td>
+          <td>{{ligne.qte}}</td>
           <td>{{ligne.livre.prix | number : '1.0'}}&nbsp;€</td>
-          <td>{{ ligne.livre.prix * ligne.quantite | number : '1.0'}}&nbsp;€</td>
+          <td>{{ ligne.livre.prix * ligne.qte | number : '1.0'}}&nbsp;€</td>
           <td>
             <button class="btn btn-success mx-2" (click)="addQuantity(index)">+</button>
             <button class="btn btn-warning" (click)="deleteQuantity(index)">-</button>
@@ -52,13 +52,16 @@
       </tfoot>
     </table>
     <div class="d-flex justify-content-center">
-      <div class="row">
-        <div class="col">
-          <button class="btn btn-danger" (click)="viderPanier()">Vider mon panier</button>
-        </div>
-        <div class="col">
-          <button class="btn btn-success">Valider mon panier</button>
-        </div>
+      <div class="col">
+        <a class="text-primary link-panier btn-width" routerLink="/accueil">
+          <&nbsp; Continuer mes achats</a> </div> <div class="row">
+
+            <div class="col">
+              <button class="btn btn-danger" (click)="viderPanier()">Vider mon panier</button>
+            </div>
+            <div class="col">
+              <button class="btn btn-success btn-width" routerLink="/commande/recapitulatif">Valider mon panier</button>
+            </div>
       </div>
 
     </div>

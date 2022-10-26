@@ -44,6 +44,7 @@ export class ConsulterMonPanierComponent implements OnInit {
     this.ngOnInit();
   }
 
+
   // Si panier session null = initialisation array vide, sinon intinialisation à l'objet en session
   getPanierSession() {
     if(JSON.parse(sessionStorage.getItem("panier")) != null) {
@@ -52,5 +53,4 @@ export class ConsulterMonPanierComponent implements OnInit {
       this.panierSession= new Array<any>();
     }
    }
-
 }
