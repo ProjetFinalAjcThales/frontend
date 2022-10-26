@@ -1,6 +1,10 @@
 export class Auteur {
     id:number;
     nom:string;
-    prenom;
+    prenom:string;
     img:string;
+
+    getInfo() {
+        this.nom+" "+this.prenom;
+    }
 }

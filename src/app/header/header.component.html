@@ -21,10 +21,10 @@
           <a class="nav-link active" aria-current="page" href="http://localhost:4200/profil">Compte</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:4200/panier">panier</a>
+          <a class="nav-link active" (click)="getInfoPanierSession()">Mon panier </a>
         </li>
-
       </ul>
+
     </div>
   </div>
 </nav>
@@ -37,12 +37,8 @@
         <li class="nav-item" *ngFor="let genre of listGenre">
           <a class="nav-link active text-white" aria-current="page" routerLink="/livres/genre"
             [queryParams]="{ search : genre.nom}">{{genre.nom}}</a>
-          <!--  <a class="nav-link active text-white" aria-current="page"
-            (click)="getGenre(genre.nom)">{{genre.nom}}</a> -->
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<!-- http://localhost:8080/api/livre/bygenre?search=bricolage -->

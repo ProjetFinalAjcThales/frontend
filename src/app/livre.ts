@@ -1,4 +1,5 @@
 import { Auteur } from "./auteur";
+import { CommandeLivre } from "./commande-livre";
 import { Genre } from "./genre";
 
 export class Livre {
@@ -8,6 +9,8 @@ export class Livre {
     image:string;
     dateSortie:number;
     prix:number;
-    g:Genre;
-    a:Auteur
+    genre:Genre;
+    auteur:Auteur;
+    quantite: number;
+    commandes: Array<CommandeLivre>;
 }
