@@ -1,0 +1,62 @@
+<app-header></app-header>
+
+<div class="container mt-5 ">
+  <h1 class="text-center mb-5">Mon panier</h1>
+
+  <div *ngIf="panierSession.length > 0">
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Titre </th>
+          <th scope="col">Auteur</th>
+          <th scope="col">Image</th>
+          <th scope="col">Quantité</th>
+          <th scope="col">Prix unitaire</th>
+          <th scope="col">Prix total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ligne of panierSession; let index = index">
+          <th scope="row">{{index + 1}}</th>
+          <td>{{ligne.livre.titre}}</td>
+          <td>{{ligne.livre.auteur.prenom}} {{ligne.livre.auteur.nom}}</td>
+          <td><img src="../../assets/images/{{ligne.livre.image}}" class="img-list-panier"
+              alt="image de {{ligne.livre.titre}}"></td>
+          <td>{{ligne.quantite}}</td>
+          <td>{{ligne.livre.prix | number : '1.0'}}&nbsp;€</td>
+          <td>{{ ligne.livre.prix * ligne.quantite | number : '1.0'}}&nbsp;€</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="col">TOTAL</th>
+          <th scope="col"> </th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"> {{prixTotal}}&nbsp;€</th>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="d-flex justify-content-center">
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-danger" (click)="viderPanier()">Vider mon panier</button>
+        </div>
+        <div class="col">
+          <button class="btn btn-success">Valider mon panier</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="panierSession.length <= 0 ">
+    <p class="text-warning text-center">Votre panier est vide ! </p>
+  </div>
+
+</div>
+
+<app-footer></app-footer>
