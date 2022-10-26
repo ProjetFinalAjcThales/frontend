@@ -1,0 +1,9 @@
+<div class="card h-100  card-livre">
+  <img src="../../assets/images/{{livre.image}}" class="card-img-top img-list-livre" alt="image de {{livre.titre}}">
+  <div class="card-body d-flex flex-column align-items-center ">
+    <p class="card-title">{{livre.titre}}</p>
+    <p class="card-text">{{livre.auteur.prenom!}}&nbsp;{{livre.auteur.nom}}</p>
+    <p class="card-text">{{livre.prix}}&nbsp;€</p>
+    <button class="btn btn-warning" (click)="ajoutPanier(livre)">Ajouter au panier</button>
+  </div>
+</div>

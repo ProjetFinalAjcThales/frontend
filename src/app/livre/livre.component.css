@@ -1,0 +1,18 @@
+.img-list-livre {
+    max-height: 200px;
+    align-self: center;
+    width: auto;
+}
+
+/* .card-livre  button {
+    display: none;
+}
+.card-livre:hover  button{
+    display: flex;
+}
+
+.card-livre button:hover {
+    border: 1px solid #ffc107;
+    background-color: white;
+
+} */
