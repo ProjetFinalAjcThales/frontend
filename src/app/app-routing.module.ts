@@ -11,6 +11,7 @@ import { ValidationCommandeComponent } from './validation-commande/validation-co
 import { ConnexionComponent } from './connexion/connexion.component';
 import { ProfilUtilisateurComponent } from './profil-utilisateur/profil-utilisateur.component';
 import { InscriptionutilisateurComponent } from './inscriptionutilisateur/inscriptionutilisateur.component';
+import { LivresbytitreComponent } from './livresbytitre/livresbytitre.component';
 
 const routes: Routes = [
   { path: 'accueil', component: HomeComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'auth/connexion', component: ConnexionComponent },
   { path: 'auth/inscription', component: InscriptionutilisateurComponent },
   { path: 'client/profil', component: ProfilUtilisateurComponent },
+  { path: 'livres/titre', component: LivresbytitreComponent },
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,7 +18,7 @@ import { ValidationCommandeComponent } from './validation-commande/validation-co
 import { ConnexionComponent } from './connexion/connexion.component';
 import { ProfilUtilisateurComponent } from './profil-utilisateur/profil-utilisateur.component';
 import { InscriptionutilisateurComponent } from './inscriptionutilisateur/inscriptionutilisateur.component';
-
+import { LivresbytitreComponent } from './livresbytitre/livresbytitre.component';
 
 @NgModule({
   declarations: [
@@ -30,22 +30,17 @@ import { InscriptionutilisateurComponent } from './inscriptionutilisateur/inscri
     LivresbygenreComponent,
     LivresbyauteurComponent,
     LivreComponent,
-      DetaillivreComponent,
+    DetaillivreComponent,
     ConsulterMonPanierComponent,
     RecapCommandeComponent,
     ValidationCommandeComponent,
     ConnexionComponent,
     ProfilUtilisateurComponent,
     InscriptionutilisateurComponent,
+    LivresbytitreComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-    
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
