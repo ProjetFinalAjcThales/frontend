@@ -9,10 +9,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Rechercher un livre" aria-label="Search">
-          <button class="btn btn-outline-primary" type="submit">Chercher</button>
-        </form>
+      <!-- <form class="d-flex" role="search" *ngFor="let auteur of listAuteur"></form> -->
+      <form class="d-flex" role="search" >
+        <input class="form-control me-2" type="search" placeholder="Rechercher un livre" name="recherche" [(ngModel)]="recherche" aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit" (click)="rechercher()"
+        >Chercher</button>
+        <!-- <button routerLink="/app2" class="btn btn-primary">test app2</button> -->
+        
+      </form>
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">

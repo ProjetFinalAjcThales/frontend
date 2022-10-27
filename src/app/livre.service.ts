@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Livre } from './livre';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,8 @@ import { Injectable } from '@angular/core';
 export class LivreService {
 
   list:any;
+  livre:any;
+  input:string;
   constructor(private http:HttpClient) { }
 
 
@@ -33,5 +36,32 @@ export class LivreService {
     })
   }
 
+
+  getLivresByAuteur(auteur : string) {
+    return this.http.get("http://localhost:8080/api/livre/byauteur?search="+auteur)
+    .toPromise()
+    .then(res => {
+      this.list = res;
+      console.log("**** complete *****");
+      console.log(res);
+      return this.list;
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
+  
+  getLivreById(id : number)  {
+    return this.http.get("http://localhost:8080/api/livre/"+id)
+    .toPromise()
+    .then(res => {
+      this.livre = res;
+      return this.livre;
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
 
 }
