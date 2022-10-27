@@ -15,6 +15,7 @@ import { DetaillivreComponent } from './detaillivre/detaillivre.component';
 import { ConsulterMonPanierComponent } from './consulter-mon-panier/consulter-mon-panier.component';
 import { RecapCommandeComponent } from './recap-commande/recap-commande.component';
 import { ValidationCommandeComponent } from './validation-commande/validation-commande.component';
+import { LivresbytitreComponent } from './livresbytitre/livresbytitre.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ValidationCommandeComponent } from './validation-commande/validation-co
       DetaillivreComponent,
     ConsulterMonPanierComponent,
     RecapCommandeComponent,
-    ValidationCommandeComponent
+    ValidationCommandeComponent,
+    LivresbytitreComponent
   ],
   imports: [
     BrowserModule,

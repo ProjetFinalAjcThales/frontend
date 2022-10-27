@@ -42,8 +42,7 @@ export class LivreService {
     .toPromise()
     .then(res => {
       this.list = res;
-      console.log("**** complete *****");
-      console.log(res);
+      
       return this.list;
     })
     .catch(err => {
@@ -54,6 +53,18 @@ export class LivreService {
   
   getLivreById(id : number)  {
     return this.http.get("http://localhost:8080/api/livre/"+id)
+    .toPromise()
+    .then(res => {
+      this.livre = res;
+      return this.livre;
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
+  getLivresByTitre(titre : string)  {
+    return this.http.get("http://localhost:8080/api/livre/byauteur?search="+titre)
     .toPromise()
     .then(res => {
       this.livre = res;

@@ -8,6 +8,7 @@ import { LivresbyauteurComponent } from './livresbyauteur/livresbyauteur.compone
 import { LivresbygenreComponent } from './livresbygenre/livresbygenre.component';
 import { RecapCommandeComponent } from './recap-commande/recap-commande.component';
 import { ValidationCommandeComponent } from './validation-commande/validation-commande.component';
+import { LivresbytitreComponent } from './livresbytitre/livresbytitre.component';
 
 const routes: Routes = [
   {path:'accueil', component:HomeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'monpanier', component:ConsulterMonPanierComponent},
   {path:'commande/recapitulatif', component:RecapCommandeComponent},
   {path:'commande/success', component:ValidationCommandeComponent},
+  {path:'livres/titre', component:LivresbytitreComponent}
 ];
 
 @NgModule({
