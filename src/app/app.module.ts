@@ -26,10 +26,8 @@ import { ValidationCommandeComponent } from './validation-commande/validation-co
     ConsulterleslivresComponent,
     LivresbygenreComponent,
     LivresbyauteurComponent,
-
     LivreComponent,
-      DetaillivreComponent
-    LivreComponent,
+      DetaillivreComponent,
     ConsulterMonPanierComponent,
     RecapCommandeComponent,
     ValidationCommandeComponent,
