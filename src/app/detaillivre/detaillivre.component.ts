@@ -28,11 +28,8 @@ export class DetaillivreComponent implements OnInit {
   }
 
   getLivreByID() {
-
     this.livreService.getLivreById(this.idLivre).then(livre => {
       this.livre = livre;
-
-      alert(JSON.stringify(this.livre));
     })
   } 
 

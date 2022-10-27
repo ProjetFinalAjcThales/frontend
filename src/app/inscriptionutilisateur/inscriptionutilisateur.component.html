@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <h1 class="text-center mb-5">Inscription</h1>
+  <div class="card">
+    <div class="card-body">
+      <div *ngIf="message">
+        <p class="text-success">{{message}}</p>
+      </div>
+      <div *ngIf="error">
+        <p class="text-danger">{{error}}</p>
+      </div>
+
+      <form class="row g-3">
+
+
+        <div class="col-md-6">
+          <label class="form-label">Prénom</label>
+          <input type="text" class="form-control" [(ngModel)]="client.prenom" name="prenom">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Nom</label>
+          <input type="text" class="form-control" [(ngModel)]="client.nom" name="nom">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" [(ngModel)]="client.mail" name="mail">
+        </div>
+        <div class="col-6">
+          <label class="form-label">Mot de passe</label>
+          <input type="password" class="form-control" [(ngModel)]="client.mdp" name="mdp">
+        </div>
+
+        <div class="col-12 d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary mt-3" (click)="inscription()">S'inscrire</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
