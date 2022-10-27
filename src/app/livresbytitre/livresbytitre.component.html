@@ -1,7 +1,8 @@
+<p>livresbytitre works!</p>
 <app-header></app-header>
 
 <div class="container mt-5 ">
-  <h1 class="text-center mb-5">Tous nos livres correspondant à votre recherche sur :  {{search | lowercase}}</h1>
+  <h1 class="text-center mb-5">Tous nos livres :  {{search | lowercase}}</h1>
 
   <div class="row row-cols-1 row-cols-md-3 g-4 list-livre" *ngIf="listLivres">
     <div class="col" *ngFor="let livre of listLivres">
@@ -10,7 +11,7 @@
 
   </div>
   <br>
-  <p class="text-center text-danger" *ngIf="listLivres?.length == 0"> Nous n'avons aucun livre correspondant à votre recherche
+  <p class="text-center text-danger" *ngIf="listLivres?.length == 0"> Nous n'avons aucun livre correspondant a ce titre
     {{search | lowercase }}
   </p>
 </div>

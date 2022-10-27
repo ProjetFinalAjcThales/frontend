@@ -11,6 +11,8 @@
 
       <!-- <form class="d-flex" role="search" *ngFor="let auteur of listAuteur"></form> -->
       <form class="d-flex" role="search" >
+        
+
         <input class="form-control me-2" type="search" placeholder="Rechercher un livre" name="recherche" [(ngModel)]="recherche" aria-label="Search">
         <button class="btn btn-outline-primary" type="submit" (click)="rechercher()"
         >Chercher</button>
