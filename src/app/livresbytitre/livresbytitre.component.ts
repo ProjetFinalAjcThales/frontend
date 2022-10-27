@@ -21,7 +21,7 @@ export class LivresbytitreComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      console.log("je passe ici")
+      
       this.search = params['search'];
       // dans le subscribe pour que la méthode soit appelé à chaque changement de paramètre de recherche
       this.getLivreByTitre();
