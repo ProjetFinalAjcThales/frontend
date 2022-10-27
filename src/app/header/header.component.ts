@@ -25,16 +25,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.genreService.getAllGenre().then(res => this.listGenre = res);
-<<<<<<< HEAD
     this.auteurService.getAllAuteur().then(res => this.listAuteur = res);
   
   this.panierSession = JSON.parse(sessionStorage.getItem("panier"));
   console.log(this.panierSession);
-=======
-
-
-    this.panierSession = JSON.parse(sessionStorage.getItem("panier"));
->>>>>>> dev
   }
 
 
