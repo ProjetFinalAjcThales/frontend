@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'', redirectTo:'/accueil', pathMatch:'full'},
   {path:'livres/genre', component:LivresbygenreComponent},
   {path:'livres/auteur', component:LivresbyauteurComponent},
-  {path:'livres/detail-livre/:id', component: DetaillivreComponent}
+  {path:'livres/detail-livre/:id', component: DetaillivreComponent},
   {path:'monpanier', component:ConsulterMonPanierComponent},
   {path:'commande/recapitulatif', component:RecapCommandeComponent},
   {path:'commande/success', component:ValidationCommandeComponent},
