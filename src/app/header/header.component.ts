@@ -13,6 +13,7 @@ import { LivresbygenreComponent } from '../livresbygenre/livresbygenre.component
 })
 export class HeaderComponent implements OnInit {
 
+
   listGenre: any;
   listAuteur:any;
   //input:string;
@@ -24,10 +25,16 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.genreService.getAllGenre().then(res => this.listGenre = res);
+<<<<<<< HEAD
     this.auteurService.getAllAuteur().then(res => this.listAuteur = res);
   
   this.panierSession = JSON.parse(sessionStorage.getItem("panier"));
   console.log(this.panierSession);
+=======
+
+
+    this.panierSession = JSON.parse(sessionStorage.getItem("panier"));
+>>>>>>> dev
   }
 
 
@@ -46,7 +53,8 @@ export class HeaderComponent implements OnInit {
     if(JSON.parse(sessionStorage.getItem("panier")) != null) {
       this.panierSession = JSON.parse(sessionStorage.getItem("panier"));
       this.panierSession.forEach(element => {
-        console.log("**** " +element.livre.titre + " quantité : " + element.quantite);
+        console.log("**** " +element.livre.titre + " quantité : " + element.qte);
+
       });
      } else {
       console.log("le panier est vide");

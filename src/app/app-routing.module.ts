@@ -1,17 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+<<<<<<< HEAD
 import { ConsulterleslivresComponent } from './consulterleslivres/consulterleslivres.component';
 import { DetaillivreComponent } from './detaillivre/detaillivre.component';
+=======
+import { ConsulterMonPanierComponent } from './consulter-mon-panier/consulter-mon-panier.component';
+>>>>>>> dev
 import { HomeComponent } from './home/home.component';
 import { LivresbyauteurComponent } from './livresbyauteur/livresbyauteur.component';
 import { LivresbygenreComponent } from './livresbygenre/livresbygenre.component';
+import { RecapCommandeComponent } from './recap-commande/recap-commande.component';
+import { ValidationCommandeComponent } from './validation-commande/validation-commande.component';
 
 const routes: Routes = [
   {path:'accueil', component:HomeComponent},
   {path:'', redirectTo:'/accueil', pathMatch:'full'},
   {path:'livres/genre', component:LivresbygenreComponent},
+<<<<<<< HEAD
   {path:'livres/auteur', component:LivresbyauteurComponent},
   {path:'livres/detail-livre/:id', component: DetaillivreComponent}
+=======
+  {path:'monpanier', component:ConsulterMonPanierComponent},
+  {path:'commande/recapitulatif', component:RecapCommandeComponent},
+  {path:'commande/success', component:ValidationCommandeComponent},
+>>>>>>> dev
 ];
 
 @NgModule({

@@ -1,12 +1,13 @@
-<!-- NAVBAR PRINCIPALE -->
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="http://localhost:4200">Bookstore</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="header">
+  <!-- NAVBAR PRINCIPALE -->
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://localhost:4200">Bookstore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <!-- <form class="d-flex" role="search" *ngFor="let auteur of listAuteur"></form> -->
       <form class="d-flex" role="search" >
@@ -17,29 +18,31 @@
         
       </form>
 
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://localhost:4200/profil">Compte</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" (click)="getInfoPanierSession()">Mon panier </a>
-        </li>
-      </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="http://localhost:4200/profil">Compte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" (click)="getInfoPanierSession()" routerLink="/monpanier">Mon panier
+            </a>
+          </li>
+        </ul>
 
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- NAVBAR GENRE  -->
-<nav class="navbar navbar-expand-lg bg-blue nav-genre">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item" *ngFor="let genre of listGenre">
-          <a class="nav-link active text-white" aria-current="page" routerLink="/livres/genre"
-            [queryParams]="{ search : genre.nom}">{{genre.nom}}</a>
-        </li>
-      </ul>
+  <!-- NAVBAR GENRE  -->
+  <nav class="navbar navbar-expand-lg bg-blue nav-genre">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" *ngFor="let genre of listGenre">
+            <a class="nav-link active text-white" aria-current="page" routerLink="/livres/genre"
+              [queryParams]="{ search : genre.nom}">{{genre.nom}}</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>

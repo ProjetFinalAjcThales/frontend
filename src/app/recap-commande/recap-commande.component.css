@@ -1,0 +1,18 @@
+.img-list-panier-recap {
+    height: 50px;
+}
+
+.prix {
+    color: #d0740b;
+    font-size: 1rem;
+}
+
+.link-panier {
+    text-decoration: none;
+}
+
+.link-panier:hover {
+    cursor: pointer;
+    text-decoration: underline ;
+
+}

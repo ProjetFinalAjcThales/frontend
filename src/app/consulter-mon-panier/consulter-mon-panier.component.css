@@ -1,0 +1,20 @@
+.img-list-panier {
+    max-height: 90px;
+}
+.container {
+    height: 80vh;
+}
+
+.btn-width {
+    width: max-content;
+}
+
+.link-panier {
+    text-decoration: none;
+}
+
+.link-panier:hover {
+    cursor: pointer;
+    text-decoration: underline ;
+
+}

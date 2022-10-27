@@ -5,14 +5,14 @@ export class CommandeLivre {
    // id: number;
 /*     commande: Commande; */
     livre: Livre;
-    quantite: number;
+    qte: number;
 
-    constructor(livre: Livre, quantite: number) {
+    constructor(livre: Livre, qte: number) {
         this.livre = livre;
-        this.quantite = quantite;
+        this.qte = qte;
     }
 
     getInfo() {
-        return this.livre.titre + " - quantité : " + this.quantite;
+        return this.livre.titre + " - quantité : " + this.qte;
     }
 }
