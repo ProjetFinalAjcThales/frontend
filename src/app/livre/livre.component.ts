@@ -31,8 +31,7 @@ export class LivreComponent implements OnInit {
   }
 
   accederAuLivre(){
-
-this.router.navigateByUrl("livres/detail-livre/"+this.livre.id);    
+    this.router.navigateByUrl("livres/detail-livre/"+this.livre.id);    
    }
 
 }

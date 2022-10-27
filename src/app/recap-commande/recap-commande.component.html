@@ -9,26 +9,30 @@
         <div class="card-body">
           <form class="row g-3">
             <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Nom</label>
-              <input type="email" class="form-control" id="inputEmail4">
+              <label class="form-label">Nom</label>
+              <input type="text" class="form-control" [(ngModel)]="clientLivraison.nom" name="nom"
+                value="{{clientLivraison.nom}}">
             </div>
             <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Prénom</label>
-              <input type="password" class="form-control" id="inputPassword4">
+              <label class="form-label">Prénom</label>
+              <input type="text" class="form-control" [(ngModel)]="clientLivraison.prenom" name="prenom"
+                value="{{clientLivraison.prenom}}">
             </div>
             <div class="col-12">
-              <label for="inputAddress" class="form-label">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="36 chemin des lilas">
+              <label class="form-label">Adresse</label>
+              <input type="text" class="form-control" placeholder="36 chemin des lilas"
+                [(ngModel)]="clientLivraison.adresse" name="adresse" value="{{clientLivraison.adresse}}">
             </div>
 
             <div class="col-md-6">
-              <label for="inputCity" class="form-label">Ville</label>
-              <input type="text" class="form-control" id="inputCity">
+              <label class="form-label">Code postal</label>
+              <input type="text" class="form-control" [(ngModel)]="clientLivraison.codePostal" name="codePostal"
+                value="{{clientLivraison.codePostal}}">
             </div>
-
             <div class="col-md-6">
-              <label for="inputZip" class="form-label">Code postal</label>
-              <input type="text" class="form-control" id="inputZip">
+              <label class="form-label">Ville</label>
+              <input type="text" class="form-control" [(ngModel)]="clientLivraison.ville" name="ville"
+                value="{{clientLivraison.ville}}">
             </div>
 
             <div class="col-12">
